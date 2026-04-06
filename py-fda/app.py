@@ -120,7 +120,7 @@ def render_plots(freq_hz, gain_linear, gain_db, taps_q, step_response, fc):
 def main():
     st.set_page_config(page_title="FIR Filter Designer", layout="wide")
     st.title("Filter Characteristics")
-
+    st.markdown("This is a simple FIR filter designer built with Streamlit. I used it to generate coefficients for my FPGA-based FIR filter implementation. You can check out the project on [GitHub](https://github.com/BekdoucheAmine/vhdl-fir-filter-ip)")
     # 1. Get Inputs
     fs, f_type, fc, ntaps, window, bits = render_sidebar()
 
