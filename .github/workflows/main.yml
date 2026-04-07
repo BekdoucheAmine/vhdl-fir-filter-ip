@@ -48,7 +48,7 @@ jobs:
 
       - name: Upload Results as Artifact
         uses: actions/upload-artifact@v3
-        needs: Run Simulation # Only upload if the simulation step runs
+        if: always() # Upload even if tests fail, to capture results
         with:
           name: docs/imgs/png-results
           path: 'png-results/*.png'
