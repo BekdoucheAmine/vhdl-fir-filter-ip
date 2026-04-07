@@ -32,7 +32,7 @@ async def impulse_response_test(dut):
 
     cocotb.start_soon(dut_interface.filter(impulse_input))  # Apply impulse input to the DUT
 
-    await dut_interface.check_output(expected_output, plot=True, title="Impulse Response Test", path= Path(__file__).resolve().parent.parent.parent / "sim_build" / "impulse_response.png")  # Check DUT output against expected impulse response
+    await dut_interface.check_output(expected_output, plot=True, title="Impulse Response Test", path= Path(__file__).resolve().parent.parent.parent / "png-results" / "impulse_response.png")  # Check DUT output against expected impulse response
 
 
 
