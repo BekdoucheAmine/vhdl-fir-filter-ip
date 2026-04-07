@@ -4,6 +4,7 @@ from model import FIRFilter
 from parrallel_fir_filter import ParallelFIRFilter
 from scipy.signal import chirp
 import numpy as np
+from pathlib import Path
 
 @cocotb.test()
 async def sweep_test(dut):
@@ -45,4 +46,4 @@ async def sweep_test(dut):
 
     cocotb.start_soon(dut_interface.filter(input_signal))  # Apply square input to the DUT
 
-    await dut_interface.check_output(expected_output, plot=True, title="Square Response Test")  # Check DUT output against expected square response
+    await dut_interface.check_output(expected_output, plot=True, title="Square Response Test", path= Path(__file__).resolve().parent.parent.parent / "sim_build" / "sweep_response.png")  # Check DUT output against expected square response

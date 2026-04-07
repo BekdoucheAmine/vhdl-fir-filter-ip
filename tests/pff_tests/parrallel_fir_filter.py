@@ -41,7 +41,7 @@ class ParallelFIRFilter:
         self.dut.s_axis_tvalid.value = 0
     
 
-    async def check_output(self, expected_output, tolerance=0, plot=False, title=None):
+    async def check_output(self, expected_output, tolerance=0, plot=False, title=None, path=None):
         """Check the DUT output against expected values."""
 
         await RisingEdge(self.dut.clk)
@@ -83,7 +83,7 @@ class ParallelFIRFilter:
             plt.legend()
             plt.grid()
 
-            plt.savefig("filter_comparison.png")
+            plt.savefig(path if path else f"{title.replace(' ', '_')}.png")
             plt.close()
         i = 0
         for expected, actual in zip(expected_output, actual_output):
