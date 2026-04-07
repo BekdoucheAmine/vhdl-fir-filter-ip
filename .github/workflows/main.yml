@@ -39,6 +39,7 @@ jobs:
 
           cd tests/pff_tests
           python3 test_all.py
+          cd
         
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
@@ -52,6 +53,6 @@ jobs:
         with:
           name: 'verification-results'
           path: |
-            'png-results/*.png'
-            'xml-reports/*.xml'
+            png-results/*.png
+            xml-reports/*.xml
           overwrite: true
