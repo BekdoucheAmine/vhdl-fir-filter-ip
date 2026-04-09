@@ -8,7 +8,7 @@ def test_conf_0():
     sim = os.getenv("SIM", "ghdl")
     proj_path = Path(__file__).resolve().parent.parent.parent
 
-    sources = [proj_path / "hardware-src" / "parallel_fir_filter.vhd"]
+    sources = [proj_path / "hardware-src" / "hdl" / "parallel_fir_filter.vhd"]
 
     runner = get_runner(sim)
     runner.build(
