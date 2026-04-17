@@ -34,9 +34,6 @@ jobs:
 
       - name: Run Simulation
         run: |
-          mkdir -p xml-reports
-          mkdir -p png-results
-
           cd tests/pff_tests
           python3 test_all.py
           cd

@@ -42,8 +42,8 @@ async def sweep_test(dut):
 
     expected_output = model.filter(input_signal)  # Get expected square response from the model
 
-    cocotb.log.info("Applying square input to the DUT...")
+    cocotb.log.info("Applying sweep input to the DUT...")
 
-    cocotb.start_soon(dut_interface.filter(input_signal))  # Apply square input to the DUT
+    cocotb.start_soon(dut_interface.filter(input_signal))  # Apply sweep input to the DUT
 
-    await dut_interface.check_output(expected_output, plot=True, title="Square Response Test", path= Path(__file__).resolve().parent.parent.parent / "png-results" / "sweep_response.png")  # Check DUT output against expected square response
+    await dut_interface.check_output(expected_output, plot=True, title="Sweep Response Test", path= Path(__file__).resolve().parent.parent.parent / "png-results" / "sweep_response.png")  # Check DUT output against expected square response
